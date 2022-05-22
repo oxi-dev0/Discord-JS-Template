@@ -76,6 +76,7 @@ bot.on('messageCreate', async (msg) => {
             var p = 1;
             for(var i = 0; i < argsExpected.length; i++){
                 if(argsExpected[i] == '|') {optional = true; continue;}
+                
                 if(p >= parts.length){
                     if(optional){
                         break;
@@ -118,7 +119,7 @@ bot.on('messageCreate', async (msg) => {
             }
 
             if(valid){
-                command.function(...[msg, args, bot]);
+                command.function(msg, args, bot);
             }
 
         } else {
