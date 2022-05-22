@@ -67,7 +67,7 @@ bot.on('messageCreate', async (msg) => {
             var argsExpected = command.args.split(" "); // ARGSTRING
 
             if(argsExpected == ''){
-                command.function(...[msg, args, bot]);
+                command.function(msg, args, bot);
                 return;
             }
 
